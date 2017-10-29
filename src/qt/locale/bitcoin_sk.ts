@@ -3320,7 +3320,7 @@ napríklad: alertnotify=echo %%s | mail -s &quot;EarnzCoin upozornenie&quot; adm
     <message>
         <location line="+8"/>
         <source>How many blocks to check at startup (default: 500, 0 = all)</source>
-        <translation>Koľko blokov skontrolovať pri štarte (predvolené: 2500, 0 = všetky) {500, 0 ?}</translation>
+        <translation>Koľko blokov skontrolovať pri štarte (predvolené: 8000, 0 = všetky) {500, 0 ?}</translation>
     </message>
     <message>
         <location line="+3"/>

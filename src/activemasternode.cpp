@@ -9,7 +9,7 @@
 #include "clientversion.h"
 
 //
-// Bootup the masternode, look for a 2500 ERZ input and register on the network
+// Bootup the masternode, look for a 8000 ERZ input and register on the network
 //
 void CActiveMasternode::ManageStatus()
 {

@@ -3326,7 +3326,7 @@ alertnotify=echo %%s | mail -s &quot;EarnzCoin Alert&quot; admin@foo.com
     <message>
         <location line="+8"/>
         <source>How many blocks to check at startup (default: 500, 0 = all)</source>
-        <translation>启动时检测的区块数量 (默认: 2500, 0表示检测全部)</translation>
+        <translation>启动时检测的区块数量 (默认: 8000, 0表示检测全部)</translation>
     </message>
     <message>
         <location line="+3"/>

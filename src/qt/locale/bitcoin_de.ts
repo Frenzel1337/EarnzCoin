@@ -3289,7 +3289,7 @@ for example: alertnotify=echo %%s | mail -s &quot;EarnzCoin Alert&quot; admin@fo
     <message>
         <location line="+8"/>
         <source>How many blocks to check at startup (default: 500, 0 = all)</source>
-        <translation>Anzahl der zu prüfenden Blöcke bei Programmstart (Standard: 2500, 0 = alle)</translation>
+        <translation>Anzahl der zu prüfenden Blöcke bei Programmstart (Standard: 8000, 0 = alle)</translation>
     </message>
     <message>
         <location line="+3"/>
