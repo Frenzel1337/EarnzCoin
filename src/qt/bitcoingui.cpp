@@ -444,10 +444,10 @@ void BitcoinGUI::createToolBars()
     toolbar->setContextMenuPolicy(Qt::PreventContextMenu);
     toolbar->setObjectName("tabs");
     toolbar->setStyleSheet("QToolButton { color: #ffffff; font-size: 13px; font-weight: 400; font-family: 'Verdana'; padding: 5px; padding-left: 8px; border: none; }" 
-                           "QToolButton:hover { background-color: #404040; border: none; padding-top: 5px; padding-bottom: 5px; }" 
-                           "QToolButton:checked { background-color: #404040; border: none; padding-top: 5px; padding-bottom: 5px; }"
-                           "QToolButton:pressed { background-color: #404040; border: none; padding-top: 5px; padding-bottom: 5px; }"
-                           "#tabs { color: #000000; background-color: #41c4ee; border: none; padding-top: 0px; padding-bottom: 0px; }");
+                           "QToolButton:hover { background-color: #00CC00; border: none; padding-top: 5px; padding-bottom: 5px; }" 
+                           "QToolButton:checked { background-color: #00CC00; border: none; padding-top: 5px; padding-bottom: 5px; }"
+                           "QToolButton:pressed { background-color: #00CC00; border: none; padding-top: 5px; padding-bottom: 5px; }"
+                           "#tabs { color: #000000; background-color: #228B22; border: none; padding-top: 0px; padding-bottom: 0px; }");
 
     QLabel* header = new QLabel();
     header->setMinimumSize(152, 152);
