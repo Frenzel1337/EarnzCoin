@@ -30,7 +30,7 @@ AddEditAdrenalineNode::AddEditAdrenalineNode(QWidget *parent) :
     ui->privkeyLineEdit->setPlaceholderText("Enter your Masternode private key");
     ui->txhashLineEdit->setPlaceholderText("Enter your 8000 ERZ TXID");
     ui->outputindexLineEdit->setPlaceholderText("Enter your transaction output index");
-    ui->rewardaddressLineEdit->setPlaceholderText("Enter a reward recive address");
+    ui->rewardaddressLineEdit->setPlaceholderText("Enter a reward receive address");
     ui->rewardpercentageLineEdit->setPlaceholderText("Input the % for the reward");
 }
 
