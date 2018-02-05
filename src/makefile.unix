@@ -188,22 +188,24 @@ ifeq (${USE_WALLET}, 1)
         obj/walletdb.o
 endif
 
-all: EarnzCoind
+all: dirs EarnzCoind
 
 # build secp256k1
 DEFS += $(addprefix -I,$(CURDIR)/secp256k1/include)
-secp256k1/src/libsecp256k1_la-secp256k1.o:
+secp secp256k1/src/libsecp256k1_la-secp256k1.o:
 	@echo "Building Secp256k1 ..."; cd secp256k1; chmod 755 *; ./autogen.sh; ./configure --enable-module-recovery; make; cd ..;
-EarnzCoind: secp256k1/src/libsecp256k1_la-secp256k1.o
 
 # build leveldb
 LIBS += $(CURDIR)/leveldb/libleveldb.a $(CURDIR)/leveldb/libmemenv.a
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/include)
 DEFS += $(addprefix -I,$(CURDIR)/leveldb/helpers)
 OBJS += obj/txdb-leveldb.o
-leveldb/libleveldb.a:
+leveldb leveldb/libleveldb.a:
 	@echo "Building LevelDB ..."; cd leveldb; chmod 755 *;make libleveldb.a libmemenv.a; cd ..;
 obj/txdb-leveldb.o: leveldb/libleveldb.a
+
+dirs:
+	mkdir obj/crypto obj/support obj/x11
 
 # auto-generated dependencies:
 -include obj/*.P
@@ -222,7 +224,7 @@ obj/%.o: %.c
 	      -e '/^$$/ d' -e 's/$$/ :/' < $(@:%.o=%.d) >> $(@:%.o=%.P); \
 	  rm -f $(@:%.o=%.d)
 
-EarnzCoind: $(OBJS:obj/%=obj/%)
+EarnzCoind: leveldb/libleveldb.a secp256k1/src/libsecp256k1_la-secp256k1.o $(OBJS:obj/%=obj/%)
 	$(LINK) $(xCXXFLAGS) -o $@ $^ $(xLDFLAGS) $(LIBS)
 
 clean:
@@ -230,5 +232,8 @@ clean:
 	-rm -f obj/*.o
 	-rm -f obj/*.P
 	-rm -f obj/build.h
+	-rm -f obj/crypto/*
+	-rm -f obj/support/*
+	-rm -f obj/x11/*
 
 FORCE:
