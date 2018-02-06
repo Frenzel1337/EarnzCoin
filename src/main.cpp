@@ -1369,10 +1369,17 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees)
 {
     int64_t nSubsidy = 2 * COIN;
-    if ((pindexPrev->nHeight > 10) && (pindexPrev->nHeight < 150)) nSubsidy = 40 * COIN;
-    else if ((pindexPrev->nHeight > 150) && (pindexPrev->nHeight < 200)) nSubsidy = 20 * COIN;
-    else if ((pindexPrev->nHeight > 200) && (pindexPrev->nHeight < 250)) nSubsidy = 10 * COIN;
-    else if ((pindexPrev->nHeight > 250) && (pindexPrev->nHeight < 300)) nSubsidy = 5 * COIN;
+
+    if(pindexPrev->nHeight >= 10 && pindexPrev->nHeight <= 150){
+      nSubsidy = 40 * COIN;
+    } else if(pindexPrev->nHeight >= 150 && pindexPrev->nHeight < 200){
+      nSubsidy = 20 * COIN;
+    } else if(pindexPrev->nHeight >= 200 && pindexPrev->nHeight < 250){
+      nSubsidy = 10 * COIN;
+    } else if(pindexPrev->nHeight >= 250 && pindexPrev->nHeight < 300){
+      nSubsidy = 5 * COIN;
+    }
+
     return nSubsidy + nFees;
 }
 
