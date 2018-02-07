@@ -1370,13 +1370,13 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 {
     int64_t nSubsidy = 2 * COIN;
 
-    if(pindexPrev->nHeight >= 10 && pindexPrev->nHeight <= 150){
+    if(pindexPrev->nHeight >= 30000 && pindexPrev->nHeight <= 130000){
       nSubsidy = 40 * COIN;
-    } else if(pindexPrev->nHeight >= 150 && pindexPrev->nHeight < 200){
+    } else if(pindexPrev->nHeight >= 130000 && pindexPrev->nHeight < 150000){
       nSubsidy = 20 * COIN;
-    } else if(pindexPrev->nHeight >= 200 && pindexPrev->nHeight < 250){
+    } else if(pindexPrev->nHeight >= 150000 && pindexPrev->nHeight < 175000){
       nSubsidy = 10 * COIN;
-    } else if(pindexPrev->nHeight >= 250 && pindexPrev->nHeight < 300){
+    } else if(pindexPrev->nHeight >= 175000 && pindexPrev->nHeight < 200000){
       nSubsidy = 5 * COIN;
     }
 
