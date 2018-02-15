@@ -1,6 +1,6 @@
 TEMPLATE = app
 TARGET = EarnzCoin-qt
-VERSION = 1.1.0.1
+VERSION = 1.1.0.2
 INCLUDEPATH += src src/json src/qt src/qt/plugins/mrichtexteditor
 QT += network printsupport
 DEFINES += ENABLE_WALLET
